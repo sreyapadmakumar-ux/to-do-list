@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// This automatically handles the base path for local development AND GitHub Pages
 export default defineConfig({
   plugins: [react()],
-  base: "/react-todo-app/"
+  base: process.env.NODE_ENV === 'production' ? './' : '/',
 })
